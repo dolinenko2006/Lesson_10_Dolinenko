@@ -25,8 +25,8 @@ def get_candidates(pk):
         return "Кандидат не найден"
 
     results = '<br>'
-    results += str(candidate["pk"]) + '<br>'  # тоже что <br>
     results += candidate["name"] + '<br>'
+    results += str(candidate["pk"]) + '<br>'  # тоже что <br>
     results += candidate["skills"] + '<br>'
 
     return f'<pre> {results} </pre>'
@@ -40,8 +40,8 @@ def get_candidate_by_skills(skill):
 
     results = "<br>"
     for candidate in candidates:
-        results += str(candidate["pk"]) + '<br>'
         results += candidate["name"] + '<br>'
+        results += str(candidate["pk"]) + '<br>'
         results += candidate["skills"] + '<br>'
 
 return f'''
