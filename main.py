@@ -44,6 +44,8 @@ def get_candidate_by_skills(skill):
         results += candidate["name"] + '<br>'
         results += candidate["skills"] + '<br>'
 
-    return f"{results}"
-
+return f'''
+        <img src="{candidate['picture']}">
+        <pre> {results} </pre>
+    '''
 app.run()
