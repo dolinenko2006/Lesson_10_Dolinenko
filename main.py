@@ -29,7 +29,10 @@ def get_candidates(pk):
     results += str(candidate["pk"]) + '<br>'  # тоже что <br>
     results += candidate["skills"] + '<br>'
 
-    return f'<pre> {results} </pre>'
+    return f'''
+           <img src="{candidate['picture']}">
+           <pre> {results} </pre>
+           '''
 
 
 @app.route("/candidate/<skill>")
@@ -44,8 +47,9 @@ def get_candidate_by_skills(skill):
         results += str(candidate["pk"]) + '<br>'
         results += candidate["skills"] + '<br>'
 
-return f'''
-        <img src="{candidate['picture']}">
-        <pre> {results} </pre>
-    '''
+    return f'''
+            <img src="{candidate['picture']}">
+            <pre> {results} </pre>
+            '''
+
 app.run()
