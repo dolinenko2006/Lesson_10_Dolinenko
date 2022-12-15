@@ -7,8 +7,8 @@ app = Flask(__name__)
 def page_index():
     list_candidates = '<br>'
     for candidate in load_candidates():
-        pk = candidate["pk"]
-        list_candidates += str(pk) + '<br>' # тоже что '\n'
+        position = candidate["position"]
+        list_candidates += str(position) + '<br>' # тоже что '\n'
         name = candidate["name"]
         list_candidates += name + '<br>'
         skills = candidate["skills"]
@@ -26,7 +26,7 @@ def get_candidates(pk):
 
     results = '<br>'
     results += candidate["name"] + '<br>'
-    results += str(candidate["pk"]) + '<br>'  # тоже что <br>
+    results += str(candidate["position"]) + '<br>'  # тоже что <br>
     results += candidate["skills"] + '<br>'
 
     return f'''
@@ -43,13 +43,15 @@ def get_candidate_by_skills(skill):
 
     results = "<br>"
     for candidate in candidates:
+        results += f'''
+                <img src="{candidate['picture']}">
+                <br>
+                '''
+
         results += candidate["name"] + '<br>'
-        results += str(candidate["pk"]) + '<br>'
+        results += str(candidate["position"]) + '<br>'
         results += candidate["skills"] + '<br>'
 
-    return f'''
-            <img src="{candidate['picture']}">
-            <pre> {results} </pre>
-            '''
+    return results
 
 app.run()

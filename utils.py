@@ -20,13 +20,9 @@ def load_candidates():
 # def get_all():
 #     """
 #     покажет всех кандидатов
-#     :return: список кандидатов all_candidates
+#     :return: список кандидатов
 #     """
-#     all_candidates = []
-#     for candidat in load_candidates():
-#         name = candidat["name"]
-#         all_candidates.append(name)
-#     return all_candidates
+#     return load_candidates()
 
 def get_by_pk(pk):
     """
